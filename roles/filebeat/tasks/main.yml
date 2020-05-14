@@ -42,6 +42,3 @@
     name: filebeat.service
     state: restarted
   become: true
-
-- name: Export Filebeat template
-  shell: filebeat export template > /tmp/filebeat.template.json
