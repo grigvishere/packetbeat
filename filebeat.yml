@@ -1,9 +1,0 @@
----
-# run the playbook with the command below:
-# sudo ansible-playbook -i hosts/filebeat.hosts filebeat.yml
-
-- hosts: filebeat
-  remote_user: root
-  become: true
-  roles:
-    - filebeat

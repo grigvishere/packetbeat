@@ -17,28 +17,28 @@
     filename: elastic-7.x
 #    update_cache: yes
 
-- name: Installing filebeat from apt repository
+- name: Installing packetbeat from apt repository
   apt: 
-    name: filebeat
+    name: packetbeat
     state: present
     update_cache: yes
 
 - name: Copying config file 
   template: 
-    src: filebeat.j2
-    dest: /etc/filebeat/filebeat.yml
+    src: packetbeat.j2
+    dest: /etc/packetbeat/packetbeat.yml
 
 - name: Reloading systemd daemon
   systemd: 
     daemon_reload: yes
 
-- name: Enabling filebeat.service
+- name: Enabling packetbeat.service
   systemd:
-    name: filebeat.service
+    name: packetbeat.service
     enabled: yes
 
-- name: Start filebeat.service
+- name: Start packetbeat.service
   systemd: 
-    name: filebeat.service
+    name: packetbeat.service
     state: restarted
   become: true

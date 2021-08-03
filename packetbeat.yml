@@ -1,0 +1,11 @@
+---
+# run the playbook with the command below:
+# sudo ansible-playbook -i hosts/packetbeat.hosts packetbeat.yml
+
+#- hosts: packetbeat
+  # remote_user: root
+  # become: true
+- hosts: localhost
+  connection: local 
+  roles:
+    - packetbeat
