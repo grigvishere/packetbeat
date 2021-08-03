@@ -920,6 +920,10 @@ packetbeat.ignore_outgoing: false
 #          to: "field2"
 #      ignore_missing: false
 #      fail_on_error: true
+processors:
+  - include_fields:
+      fields: ["host.name", "source", "destination", "network.bytes", "network.packets", "network.type", "network.transport", "client", "fields"]
+
 
 # =============================== Elastic Cloud ================================
 
