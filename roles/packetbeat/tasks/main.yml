@@ -10,7 +10,7 @@
     name: apt-transport-https
     state: present
 
-- name: Adding filebeat 7.x repository
+- name: Adding packetbeat 7.x repository
   apt_repository: 
     repo: deb https://artifacts.elastic.co/packages/7.x/apt stable main
     state: present 
